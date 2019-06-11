@@ -23,6 +23,19 @@ class Authentication:
         
         return pageBody
 
+    def checkAuth():
+        s = session.get(urls['search'])
+        pageBody = BeautifulSoup(s.text,"lxml").body
+        isLoggedIn = pageBody.find_all(Authentication.match_class(["header-logged-in__logo"]))
+        print(isLoggedIn)
+
+
+    def withoutAuth(pageNumber):
+        s = requests.get(urls['search']+str(pageNumber))
+        print(urls['search']+str(pageNumber))
+        pageBody = BeautifulSoup(s.text,"lxml").body
+        
+        return pageBody    
 
     def match_class(target):                                                        
         def do_match(tag):                                                          
@@ -33,12 +46,23 @@ class Authentication:
     def writeFacultyUrls(pageBody):
         allUrls = pageBody.find_all(Authentication.match_class(["display-name"]))
         file1 = open(files['facultyURL'],"a") 
+
         for m in allUrls:
             file1.write (urls['mainUrl']+str(m.attrs['href']))
             file1.write ("\n")
         file1.close()
 
-#start basic execution         
-afterAuth = Authentication.RequestAuth()
-#Authentication.getfaculltyUrls()
-Authentication.writeFacultyUrls(afterAuth)
+
+if __name__ == "__main__":
+    
+    #start basic execution
+    for pageNumber in range(1,3):          
+        afterAuth = Authentication.withoutAuth(pageNumber)
+        #Authentication.getfaculltyUrls()
+        Authentication.writeFacultyUrls(afterAuth)
+    # Authentication.RequestAuth()
+    # x = Authentication.checkAuth()
+    # if(x):
+    #     print("Yes")
+    # else:
+    #     print("No")    

@@ -30,7 +30,7 @@ configData = dict(
 urls = dict(
     mainUrl = "https://www.researchgate.net/",
     login = "https://www.researchgate.net/login",
-    search = "https://www.researchgate.net/institution/California_State_University_Fullerton/members?page=1"
+    search = "https://www.researchgate.net/institution/California_State_University_Fullerton/members?page="
 
 )
 
