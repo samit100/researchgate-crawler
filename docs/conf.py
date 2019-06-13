@@ -24,13 +24,14 @@ configData = dict(
     email = 'zz-sasharma@fullerton.edu',
     password = '23811986',
     setLoginCookie = "yes",
-    invalidPasswordCount =  0
+    invalidPasswordCount =  0,
 )
 
 urls = dict(
     mainUrl = "https://www.researchgate.net/",
     login = "https://www.researchgate.net/login",
-    search = "https://www.researchgate.net/institution/California_State_University_Fullerton/members?page="
+    search = "https://www.researchgate.net/institution/California_State_University_Fullerton/members?page=",
+    mark = "https://www.researchgate.net/profile/Mark_Bilby"
 
 )
 

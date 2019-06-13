@@ -60,9 +60,4 @@ if __name__ == "__main__":
         afterAuth = Authentication.withoutAuth(pageNumber)
         #Authentication.getfaculltyUrls()
         Authentication.writeFacultyUrls(afterAuth)
-    # Authentication.RequestAuth()
-    # x = Authentication.checkAuth()
-    # if(x):
-    #     print("Yes")
-    # else:
-    #     print("No")    
+       
