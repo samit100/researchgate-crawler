@@ -1,3 +1,4 @@
 beautifulsoup
 python 3
 scrapy
+pip
